@@ -58,6 +58,7 @@ import cm.aptoide.pt.app.view.NewAppViewFragment.BundleKeys;
 import cm.aptoide.pt.appview.PreferencesManager;
 import cm.aptoide.pt.billing.view.login.PaymentLoginPresenter;
 import cm.aptoide.pt.billing.view.login.PaymentLoginView;
+import cm.aptoide.pt.comment.CommentsPresenter;
 import cm.aptoide.pt.crashreports.CrashReport;
 import cm.aptoide.pt.dataprovider.WebService;
 import cm.aptoide.pt.dataprovider.interfaces.TokenInvalidator;
@@ -371,5 +372,9 @@ import rx.schedulers.Schedulers;
     return new EditorialPresenter((EditorialView) fragment, editorialManager,
         AndroidSchedulers.mainThread(), crashReport, new PermissionManager(),
         ((PermissionService) fragment.getContext()), editorialAnalytics, editorialNavigator);
+  }
+
+  @FragmentScope @Provides CommentsPresenter providesCommentsPresenter() {
+    return new CommentsPresenter();
   }
 }
