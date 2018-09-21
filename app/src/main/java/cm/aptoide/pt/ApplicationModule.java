@@ -1384,4 +1384,8 @@ import static com.google.android.gms.auth.api.Auth.GOOGLE_SIGN_IN_API;
   @Singleton @Provides Comments providesComments(CommentsRepository commentsRepository) {
     return new Comments(commentsRepository);
   }
+
+  @Singleton @Provides AptoideUtils.DateTimeU provideDateUtils() {
+    return AptoideUtils.DateTimeU.getInstance(application.getApplicationContext());
+  }
 }
